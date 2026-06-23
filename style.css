@@ -366,6 +366,36 @@ body.page-ready .scroll-down {
     line-height: 1.7;
 }
 
+.about-section h3 {
+    margin: 34px 0 12px;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.about-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 700px;
+    margin-top: 26px;
+}
+
+.about-list-block h3 {
+    margin-top: 0;
+}
+
+.about-section ul {
+    margin: 0;
+    padding-left: 22px;
+    color: #d4d4d4;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.about-section li + li {
+    margin-top: 6px;
+}
+
 .projects-section {
     background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
     border-top: 1px solid #2a2a2a;
@@ -701,6 +731,11 @@ body.light-mode .intro-text .contact-btn-intro:hover {
     box-shadow: 0 0 16px rgba(105,241,164,0.4);
 }
 
+body.light-mode .profile-pic img {
+    background: #ececec;
+    border-color: #cfcfcf;
+}
+
 body.light-mode .scroll-down {
     color: #555;
 }
@@ -719,6 +754,14 @@ body.light-mode .about-section h2 {
 }
 
 body.light-mode .about-section p {
+    color: #333;
+}
+
+body.light-mode .about-section h3 {
+    color: #1a1a1a;
+}
+
+body.light-mode .about-section ul {
     color: #333;
 }
 
