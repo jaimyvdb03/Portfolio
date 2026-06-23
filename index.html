@@ -107,16 +107,34 @@
         <h2>Projecten</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Omschrijving van project 1.</p>
+                <h3>StudyBuddy Web App</h3>
+                <p>Planning- en samenwerkingsapp voor studenten met deadlines en voortgang.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="StudyBuddy Web App" data-project-details="Een webapp voor studenten om samen taken te plannen, deadlines te beheren en voortgang bij te houden. Gebouwd met React en een REST API. Binnen dit project heb ik vooral gewerkt aan de frontend componenten, routing en responsive design.">Details</button>
             </div>
             <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Omschrijving van project 2.</p>
+                <h3>FitTrack Mobile</h3>
+                <p>React Native app om workouts en persoonlijke doelen te tracken.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="FitTrack Mobile" data-project-details="Een mobiele app om workouts en dagelijkse doelen te registreren. Ontwikkeld met React Native. Ik heb gewerkt aan de UI, formulier-validatie en state management voor gebruikersdata.">Details</button>
             </div>
             <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Omschrijving van project 3.</p>
+                <h3>Portfolio CMS</h3>
+                <p>Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="Portfolio CMS" data-project-details="Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.">Details</button>
+            </div>
+            <div class="project-card">
+                <h3>TaskFlow API</h3>
+                <p>Ruby on Rails API voor taakbeheer en team-workflows.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="TaskFlow API" data-project-details="Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.">Details</button>
+            </div>
+            <div class="project-card">
+                <h3>Event Landing Pages</h3>
+                <p>Snelle en responsive landingspagina's met interactieve elementen.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="Event Landing Pages" data-project-details="Een set moderne event-pagina's gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.">Details</button>
+            </div>
+            <div class="project-card">
+                <h3>Mini Game Prototype</h3>
+                <p>CMGT prototype met basis gameplay, score en level-progressie.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="Mini Game Prototype" data-project-details="Een korte game-prototype voor een schoolopdracht binnen CMGT. Gebouwd met JavaScript. In dit project heb ik gameplay-logica, score-systeem en eenvoudige level-opbouw ontwikkeld.">Details</button>
             </div>
         </div>
     </section>
@@ -136,6 +154,14 @@
             <button type="submit" class="contact-btn">Versturen</button>
         </form>
     </section>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="project-modal-content">
+            <button type="button" class="project-modal-close" aria-label="Sluiten">&times;</button>
+            <h3 id="project-modal-title">Project titel</h3>
+            <p id="project-modal-description">Project details</p>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
@@ -266,6 +292,47 @@
                 themeToggle.setAttribute('aria-pressed', 'false');
             }
         });
+
+        const projectTriggers = document.querySelectorAll('.project-trigger');
+        const projectModal = document.getElementById('project-modal');
+        const projectModalTitle = document.getElementById('project-modal-title');
+        const projectModalDescription = document.getElementById('project-modal-description');
+        const projectModalClose = document.querySelector('.project-modal-close');
+
+        if (projectTriggers.length > 0 && projectModal && projectModalTitle && projectModalDescription && projectModalClose) {
+            function closeProjectModal() {
+                projectModal.classList.remove('is-open');
+                projectModal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+            }
+
+            projectTriggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    const title = trigger.getAttribute('data-project-title') || 'Project';
+                    const details = trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
+
+                    projectModalTitle.textContent = title;
+                    projectModalDescription.textContent = details;
+                    projectModal.classList.add('is-open');
+                    projectModal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('modal-open');
+                });
+            });
+
+            projectModalClose.addEventListener('click', closeProjectModal);
+
+            projectModal.addEventListener('click', (event) => {
+                if (event.target === projectModal) {
+                    closeProjectModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && projectModal.classList.contains('is-open')) {
+                    closeProjectModal();
+                }
+            });
+        }
     </script>
 </body>
 </html>
