@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaimy van den Berg - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <span class="neon-char">P</span>ersonal <span class="neon-char">W</span>ebsite
+        </div>
+        <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projecten">Projecten</a></li>
+                <li><a href="#over-mij">Over mij</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h1>Jaimy<br>van den Berg</h1>
+            </div>
+            <div class="profile-pic">
+                <svg width="180" height="180" viewBox="0 0 180 180">
+                    <circle cx="90" cy="90" r="85" fill="#1a1a1a" stroke="#d4d4d4" stroke-width="2"/>
+                    <circle cx="90" cy="75" r="40" fill="#2a2a2a" stroke="#d4d4d4" stroke-width="2"/>
+                    <path d="M40 150 Q90 120 140 150 Q130 110 90 110 Q50 110 40 150" fill="#1a1a1a" stroke="#d4d4d4" stroke-width="2"/>
+                </svg>
+            </div>
+        </section>
+        <div class="scroll-down">
+            <span>Scroll down</span>
+            <span class="arrow">&#8595;</span>
+        </div>
+    </main>
+
+    <section id="over-mij" class="about-section reveal-section" data-reveal="left">
+        <h2>Over mij</h2>
+        <p>
+            Hi, ik ben Jaimy van den Berg. Dit is mijn persoonlijke website waar ik mijn projecten,
+            skills en ontwikkeling laat zien.
+        </p>
+    </section>
+
+    <section id="projecten" class="about-section projects-section reveal-section" data-reveal="right">
+        <h2>Projecten</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>Omschrijving van project 1.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Omschrijving van project 2.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>Omschrijving van project 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="about-section contact-section reveal-section" data-reveal="left">
+        <h2>Contact</h2>
+        <p class="contact-intro">Stuur mij een bericht en ik neem zo snel mogelijk contact op.</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="email">Jouw e-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Bericht</label>
+                <textarea id="message" name="message" rows="6" placeholder="Typ hier je bericht..." required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Versturen</button>
+        </form>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-name"><span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg</span>
+            <span class="footer-copy">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.013-4.947.072-1.609.073-3.033.418-4.153 1.538-1.12 1.12-1.465 2.544-1.538 4.153-.059 1.28-.072 1.688-.072 4.947s.013 3.667.072 4.947c.073 1.609.418 3.033 1.538 4.153 1.12 1.12 2.544 1.465 4.153 1.538 1.28.059 1.688.072 4.947.072s3.667-.013 4.947-.072c1.609-.073 3.033-.418 4.153-1.538 1.12-1.12 1.465-2.544 1.538-4.153.059-1.28.072-1.688.072-4.947s-.013-3.667-.072-4.947c-.073-1.609-.418-3.033-1.538-4.153-1.12-1.12-2.544-1.465-4.153-1.538-1.28-.059-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNav = document.getElementById('primary-nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        if (menuToggle && primaryNav && menuBackdrop) {
+            function closeMenu() {
+                document.body.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            function toggleMenu() {
+                const isOpen = document.body.classList.toggle('menu-open');
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuBackdrop.addEventListener('click', closeMenu);
+
+            primaryNav.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const hash = link.getAttribute('href');
+                    if (!hash || !hash.startsWith('#')) {
+                        closeMenu();
+                        return;
+                    }
+
+                    const target = document.querySelector(hash);
+                    if (!target) {
+                        closeMenu();
+                        return;
+                    }
+
+                    event.preventDefault();
+                    closeMenu();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.replaceState(null, '', hash);
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+        }
+
+        window.requestAnimationFrame(() => {
+            document.body.classList.add('page-ready');
+        });
+
+        const revealSections = document.querySelectorAll('.reveal-section');
+        if (revealSections.length > 0) {
+            const revealObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -40px 0px'
+                }
+            );
+
+            revealSections.forEach((section) => {
+                revealObserver.observe(section);
+            });
+        }
+    </script>
+</body>
+</html>
