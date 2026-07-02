@@ -47,6 +47,7 @@
         <section class="intro">
             <div class="intro-text">
                 <h1>Jaimy<br>van den Berg</h1>
+                <p>Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
                 <a href="#contact" class="contact-btn-intro">Contact me</a>
             </div>
             <div class="profile-pic">
@@ -107,9 +108,9 @@
         <h2>Projecten</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>StudyBuddy Web App</h3>
-                <p>Planning- en samenwerkingsapp voor studenten met deadlines en voortgang.</p>
-                <button type="button" class="project-details-btn project-trigger" data-project-title="StudyBuddy Web App" data-project-details="Een webapp voor studenten om samen taken te plannen, deadlines te beheren en voortgang bij te houden. Gebouwd met React en een REST API. Binnen dit project heb ik vooral gewerkt aan de frontend componenten, routing en responsive design.">Details</button>
+                <h3>Toegankelijke Leeromgeving Sollicitatieproces</h3>
+                <p>Digitale leeromgeving die laaggeletterde volwassenen helpt zich voor te bereiden op solliciteren in Nederland.</p>
+                <button type="button" class="project-details-btn project-trigger" data-project-title="Toegankelijke Leeromgeving Sollicitatieproces" data-project-details="Project&#10;Dit project richtte zich op het ontwikkelen van een toegankelijke digitale leeromgeving voor laaggeletterde volwassenen die zich voorbereiden op solliciteren in Nederland.&#10;&#10;Het doel was om drempels zoals beperkte taalvaardigheid, digitale vaardigheden en onzekerheid weg te nemen, zodat gebruikers zelfstandiger kunnen solliciteren en beter kunnen deelnemen aan de arbeidsmarkt.&#10;&#10;Op basis van onderzoek is een website ontwikkeld met eenvoudige lessen op A2-niveau, ondersteuning in meerdere talen, text-to-speech, videolessen en een AI-assistent om sollicitatiegesprekken veilig te oefenen.&#10;&#10;Mijn rol&#10;- UX-onderzoek uitgevoerd naar laaggeletterdheid en uitdagingen van de doelgroep&#10;- Menselijke en democratische waarden onderzocht en vertaald naar ontwerpkeuzes&#10;- Expertinterviews en probes opgezet&#10;- Onderzoeksresultaten gepresenteerd en iteraties onderbouwd met gebruikersonderzoek&#10;- Meegedacht over toegankelijkheidsfuncties zoals meertaligheid, text-to-speech, videolessen en AI-assistentie&#10;&#10;Doelgroep&#10;Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederlandse sollicitatieproces, waaronder:&#10;- Mensen die vroegtijdig zijn gestopt met school&#10;- Nieuwkomers en mensen met een migratieachtergrond&#10;- Mensen met beperkte taal- en digitale vaardigheden." data-project-url="https://github.com/jaimyvdb03/Interdisciplinair_Team3_Eindproject">Details</button>
             </div>
             <div class="project-card">
                 <h3>FitTrack Mobile</h3>
@@ -160,6 +161,7 @@
             <button type="button" class="project-modal-close" aria-label="Sluiten">&times;</button>
             <h3 id="project-modal-title">Project titel</h3>
             <p id="project-modal-description">Project details</p>
+            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden>Bekijk op GitHub</a>
         </div>
     </div>
 
@@ -297,9 +299,10 @@
         const projectModal = document.getElementById('project-modal');
         const projectModalTitle = document.getElementById('project-modal-title');
         const projectModalDescription = document.getElementById('project-modal-description');
+        const projectModalLink = document.getElementById('project-modal-link');
         const projectModalClose = document.querySelector('.project-modal-close');
 
-        if (projectTriggers.length > 0 && projectModal && projectModalTitle && projectModalDescription && projectModalClose) {
+        if (projectTriggers.length > 0 && projectModal && projectModalTitle && projectModalDescription && projectModalLink && projectModalClose) {
             function closeProjectModal() {
                 projectModal.classList.remove('is-open');
                 projectModal.setAttribute('aria-hidden', 'true');
@@ -310,9 +313,19 @@
                 trigger.addEventListener('click', () => {
                     const title = trigger.getAttribute('data-project-title') || 'Project';
                     const details = trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
+                    const projectUrl = trigger.getAttribute('data-project-url');
 
                     projectModalTitle.textContent = title;
                     projectModalDescription.textContent = details;
+
+                    if (projectUrl) {
+                        projectModalLink.href = projectUrl;
+                        projectModalLink.hidden = false;
+                    } else {
+                        projectModalLink.href = '#';
+                        projectModalLink.hidden = true;
+                    }
+
                     projectModal.classList.add('is-open');
                     projectModal.setAttribute('aria-hidden', 'false');
                     document.body.classList.add('modal-open');
