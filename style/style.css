@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
 :root {
     --header-height: 60px;
 }
@@ -182,6 +184,7 @@ main {
 }
 
 .intro-text h1 {
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0 0 40px 0;
@@ -200,6 +203,12 @@ main {
     height: 2px;
     background: #69f1a4;
     box-shadow: 0 0 12px rgba(105,241,164,0.6);
+}
+
+.intro-text p {
+    margin: 0;
+    max-width: 17rem;
+    line-height: 1.5;
 }
 
 .intro-text .contact-btn-intro {
@@ -510,6 +519,25 @@ body.page-ready .scroll-down {
     color: #d4d4d4;
     line-height: 1.7;
     font-size: 1.05rem;
+    white-space: pre-line;
+}
+
+.project-modal-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+    border: 1px solid #69f1a4;
+    border-radius: 6px;
+    color: #69f1a4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.project-modal-link:hover {
+    background: #69f1a4;
+    color: #000000;
+    box-shadow: 0 0 14px rgba(105, 241, 164, 0.35);
 }
 
 .project-modal-close {
@@ -697,6 +725,9 @@ body.page-ready .scroll-down {
     }
     .intro-text h1 {
         font-size: 2.2rem;
+    }
+    .intro-text p {
+        max-width: 12.5rem;
     }
     .about-section {
         padding: 90px 24px 64px;
@@ -913,6 +944,17 @@ body.light-mode .project-modal-content h3 {
 
 body.light-mode .project-modal-content p {
     color: #333;
+}
+
+body.light-mode .project-modal-link {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+}
+
+body.light-mode .project-modal-link:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    box-shadow: none;
 }
 
 body.light-mode .project-modal-close {
