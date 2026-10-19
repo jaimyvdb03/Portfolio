@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="site-title">
-            <span class="neon-char">P</span>ersonal <span class="neon-char">W</span>ebsite
+            <span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg
         </div>
         <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
             <span></span>
@@ -23,7 +23,7 @@
                 <li><a href="#over-mij">Over mij</a></li>
                 <li>
                     <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -34,7 +34,7 @@
                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
@@ -46,9 +46,11 @@
     <main>
         <section class="intro">
             <div class="intro-text">
+                <span class="intro-badge">Junior Developer &middot; CMGT Student</span>
                 <h1>Jaimy<br>van den Berg</h1>
-                <p>Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
-                <a href="#contact" class="contact-btn-intro">Contact me</a>
+                <br>
+                <p class="intro-subtitle">Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
+                <a href="#contact" class="contact-btn-intro">Contact mij</a>
             </div>
             <div class="profile-pic">
                 <img src="images/Profiel_foto.png" alt="Profielfoto Jaimy van den Berg">
@@ -269,28 +271,28 @@
         const themeToggle = document.querySelector('.theme-toggle');
         const sunIcon = document.querySelector('.sun-icon');
         const moonIcon = document.querySelector('.moon-icon');
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const savedTheme = localStorage.getItem('theme') || 'light';
 
         // Apply saved theme on page load
-        if (savedTheme === 'light') {
-            document.body.classList.add('light-mode');
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
             themeToggle.setAttribute('aria-pressed', 'true');
         }
 
         themeToggle.addEventListener('click', () => {
-            const isLightMode = document.body.classList.toggle('light-mode');
-            
-            if (isLightMode) {
-                localStorage.setItem('theme', 'light');
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-                themeToggle.setAttribute('aria-pressed', 'true');
-            } else {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+
+            if (isDarkMode) {
                 localStorage.setItem('theme', 'dark');
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
+                themeToggle.setAttribute('aria-pressed', 'true');
+            } else {
+                localStorage.setItem('theme', 'light');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
                 themeToggle.setAttribute('aria-pressed', 'false');
             }
         });
