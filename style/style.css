@@ -22,6 +22,10 @@
     --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
     --shadow-lg: 0 24px 50px rgba(15, 23, 42, 0.12);
     --radius: 18px;
+
+    --blob-1: rgba(99, 102, 241, 0.35);
+    --blob-2: rgba(167, 139, 250, 0.32);
+    --blob-3: rgba(56, 189, 248, 0.28);
 }
 
 body.dark-mode {
@@ -42,6 +46,10 @@ body.dark-mode {
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
     --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.55);
+
+    --blob-1: rgba(129, 140, 248, 0.18);
+    --blob-2: rgba(167, 139, 250, 0.14);
+    --blob-3: rgba(56, 189, 248, 0.10);
 }
 
 /* ── Base ──────────────────────────────────────── */
@@ -67,6 +75,44 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Animated gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(46rem 46rem at 12% 8%, var(--blob-1), transparent 65%),
+        radial-gradient(42rem 42rem at 88% 18%, var(--blob-2), transparent 65%),
+        radial-gradient(50rem 50rem at 50% 95%, var(--blob-3), transparent 65%);
+    animation: gradient-drift 26s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, transparent 55%, var(--bg) 98%);
+    pointer-events: none;
+}
+
+@keyframes gradient-drift {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    33% {
+        transform: translate3d(2.5%, -3%, 0) scale(1.06);
+    }
+    66% {
+        transform: translate3d(-2.5%, 2.5%, 0) scale(0.97);
+    }
+    100% {
+        transform: translate3d(1.5%, 3%, 0) scale(1.04);
+    }
 }
 
 body.modal-open,
@@ -228,9 +274,6 @@ main {
     min-height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
-    background:
-        radial-gradient(55rem 28rem at 85% -10%, var(--accent-soft), transparent 60%),
-        var(--bg);
 }
 
 .intro {
@@ -568,6 +611,10 @@ body.page-ready .scroll-down {
     }
 
     .profile-pic::before {
+        animation: none;
+    }
+
+    body::before {
         animation: none;
     }
 }
