@@ -137,14 +137,14 @@
         <form class="contact-form" action="https://formsubmit.co/jaimyvdb03@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Nieuw bericht via mijn portfolio">
             <input type="hidden" name="_captcha" value="true">
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
                 <label for="email">Jouw e-mailadres</label>
-                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" required>
+                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" maxlength="254" autocomplete="email" required>
             </div>
             <div class="form-group">
                 <label for="message">Bericht</label>
-                <textarea id="message" name="message" rows="6" placeholder="Typ hier je bericht..." required></textarea>
+                <textarea id="message" name="message" rows="6" placeholder="Typ hier je bericht..." maxlength="5000" required></textarea>
             </div>
             <button type="submit" class="contact-btn">Versturen</button>
         </form>

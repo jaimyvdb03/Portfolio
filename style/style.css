@@ -866,6 +866,14 @@ body.page-ready .scroll-down {
     text-align: left;
 }
 
+.form-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
