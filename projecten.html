@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecten - Jaimy van den Berg</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <a class="site-title site-title-link" href="index.html">
+            <span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#projecten">Projecten</a></li>
+                <li><a href="index.html#over-mij">Over mij</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+
+    <main>
+        <section id="projecten" class="about-section projects-section">
+            <h1 class="projects-page-title">Mijn projecten</h1>
+            <p>Een overzicht van projecten waaraan ik heb gewerkt.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Toegankelijke Leeromgeving Sollicitatieproces</h3>
+                    <p>Digitale leeromgeving die laaggeletterde volwassenen helpt zich voor te bereiden op solliciteren in Nederland.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="Toegankelijke Leeromgeving Sollicitatieproces" data-project-details="Project&#10;Dit project richtte zich op het ontwikkelen van een toegankelijke digitale leeromgeving voor laaggeletterde volwassenen die zich voorbereiden op solliciteren in Nederland.&#10;&#10;Het doel was om drempels zoals beperkte taalvaardigheid, digitale vaardigheden en onzekerheid weg te nemen, zodat gebruikers zelfstandiger kunnen solliciteren en beter kunnen deelnemen aan de arbeidsmarkt.&#10;&#10;Op basis van onderzoek is een website ontwikkeld met eenvoudige lessen op A2-niveau, ondersteuning in meerdere talen, text-to-speech, videolessen en een AI-assistent om sollicitatiegesprekken veilig te oefenen.&#10;&#10;Mijn rol&#10;- UX-onderzoek uitgevoerd naar laaggeletterdheid en uitdagingen van de doelgroep&#10;- Menselijke en democratische waarden onderzocht en vertaald naar ontwerpkeuzes&#10;- Expertinterviews en probes opgezet&#10;- Onderzoeksresultaten gepresenteerd en iteraties onderbouwd met gebruikersonderzoek&#10;- Meegedacht over toegankelijkheidsfuncties zoals meertaligheid, text-to-speech, videolessen en AI-assistentie&#10;&#10;Doelgroep&#10;Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederlandse sollicitatieproces, waaronder:&#10;- Mensen die vroegtijdig zijn gestopt met school&#10;- Nieuwkomers en mensen met een migratieachtergrond&#10;- Mensen met beperkte taal- en digitale vaardigheden." data-project-url="https://github.com/jaimyvdb03/Interdisciplinair_Team3_Eindproject">Details</button>
+                </div>
+                <div class="project-card">
+                    <h3>FitTrack Mobile</h3>
+                    <p>React Native app om workouts en persoonlijke doelen te tracken.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="FitTrack Mobile" data-project-details="Een mobiele app om workouts en dagelijkse doelen te registreren. Ontwikkeld met React Native. Ik heb gewerkt aan de UI, formulier-validatie en state management voor gebruikersdata.">Details</button>
+                </div>
+                <div class="project-card">
+                    <h3>Portfolio CMS</h3>
+                    <p>Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="Portfolio CMS" data-project-details="Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.">Details</button>
+                </div>
+                <div class="project-card">
+                    <h3>TaskFlow API</h3>
+                    <p>Ruby on Rails API voor taakbeheer en team-workflows.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="TaskFlow API" data-project-details="Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.">Details</button>
+                </div>
+                <div class="project-card">
+                    <h3>Event Landing Pages</h3>
+                    <p>Snelle en responsive landingspagina's met interactieve elementen.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="Event Landing Pages" data-project-details="Een set moderne event-pagina's gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.">Details</button>
+                </div>
+                <div class="project-card">
+                    <h3>Mini Game Prototype</h3>
+                    <p>CMGT prototype met basis gameplay, score en level-progressie.</p>
+                    <button type="button" class="project-details-btn project-trigger" data-project-title="Mini Game Prototype" data-project-details="Een korte game-prototype voor een schoolopdracht binnen CMGT. Gebouwd met JavaScript. In dit project heb ik gameplay-logica, score-systeem en eenvoudige level-opbouw ontwikkeld.">Details</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="project-modal-content">
+            <button type="button" class="project-modal-close" aria-label="Sluiten">&times;</button>
+            <h3 id="project-modal-title">Project titel</h3>
+            <p id="project-modal-description">Project details</p>
+            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden>Bekijk op GitHub</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-name"><span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg</span>
+            <span class="footer-copy">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNav = document.getElementById('primary-nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        function closeMenu() {
+            document.body.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = document.body.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        menuBackdrop.addEventListener('click', closeMenu);
+        primaryNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const hash = link.getAttribute('href');
+                if (!hash || !hash.startsWith('#')) {
+                    closeMenu();
+                    return;
+                }
+
+                const target = document.querySelector(hash);
+                if (!target) {
+                    closeMenu();
+                    return;
+                }
+
+                event.preventDefault();
+                closeMenu();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', hash);
+            });
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        const themeToggle = document.querySelector('.theme-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+
+        function applyTheme(isDarkMode) {
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            sunIcon.style.display = isDarkMode ? 'block' : 'none';
+            moonIcon.style.display = isDarkMode ? 'none' : 'block';
+            themeToggle.setAttribute('aria-pressed', isDarkMode ? 'true' : 'false');
+        }
+
+        applyTheme(localStorage.getItem('theme') === 'dark');
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            applyTheme(isDarkMode);
+        });
+
+        const projectModal = document.getElementById('project-modal');
+        const projectModalTitle = document.getElementById('project-modal-title');
+        const projectModalDescription = document.getElementById('project-modal-description');
+        const projectModalLink = document.getElementById('project-modal-link');
+        const projectModalClose = document.querySelector('.project-modal-close');
+
+        function closeProjectModal() {
+            projectModal.classList.remove('is-open');
+            projectModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.querySelectorAll('.project-trigger').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                projectModalTitle.textContent = trigger.getAttribute('data-project-title') || 'Project';
+                projectModalDescription.textContent = trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
+
+                const projectUrl = trigger.getAttribute('data-project-url');
+                projectModalLink.href = projectUrl || '#';
+                projectModalLink.hidden = !projectUrl;
+                projectModal.classList.add('is-open');
+                projectModal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+            });
+        });
+        projectModalClose.addEventListener('click', closeProjectModal);
+        projectModal.addEventListener('click', (event) => {
+            if (event.target === projectModal) {
+                closeProjectModal();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && projectModal.classList.contains('is-open')) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
