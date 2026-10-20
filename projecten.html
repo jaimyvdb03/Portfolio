@@ -6,24 +6,33 @@
     <title>Projecten - Jaimy van den Berg</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
+<body data-page="projects">
     <header>
         <a class="site-title site-title-link" href="index.html">
             <span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg
         </a>
-        <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <button class="menu-toggle" aria-label="Menu openen" data-i18n-aria-label="menu.open" aria-controls="primary-nav" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <nav id="primary-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#projecten">Projecten</a></li>
-                <li><a href="index.html#over-mij">Over mij</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="#projecten" data-i18n="nav.projects">Projecten</a></li>
+                <li><a href="index.html#over-mij" data-i18n="nav.about">Over mij</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="language-menu-item">
+                    <button type="button" class="language-toggle" aria-label="Select language" data-i18n-aria-label="language.aria" aria-haspopup="true" aria-expanded="false" aria-controls="language-options">
+                        <span class="current-language-code" aria-hidden="true">NL</span>
+                    </button>
+                    <ul class="language-options" id="language-options" role="menu" hidden>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="nl" aria-checked="true"><span class="language-code" aria-hidden="true">NL</span> Nederlands</button></li>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="en" aria-checked="false"><span class="language-code" aria-hidden="true">EN</span> English</button></li>
+                    </ul>
+                </li>
                 <li>
-                    <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+                    <button class="theme-toggle" aria-label="Thema wijzigen" data-i18n-aria-label="theme.toggle" aria-pressed="false">
                         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -47,8 +56,8 @@
 
     <main>
         <section id="projecten" class="about-section projects-section">
-            <h1 class="projects-page-title">Mijn projecten</h1>
-            <p>Een overzicht van projecten waaraan ik heb gewerkt.</p>
+            <h1 class="projects-page-title" data-i18n="projects.pageTitle">Mijn projecten</h1>
+            <p data-i18n="projects.pageIntro">Een overzicht van projecten waaraan ik heb gewerkt.</p>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Toegankelijke Leeromgeving Sollicitatieproces</h3>
@@ -86,20 +95,21 @@
 
     <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <div class="project-modal-content">
-            <button type="button" class="project-modal-close" aria-label="Sluiten">&times;</button>
-            <h3 id="project-modal-title">Project titel</h3>
-            <p id="project-modal-description">Project details</p>
-            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden>Bekijk op GitHub</a>
+            <button type="button" class="project-modal-close" aria-label="Sluiten" data-i18n-aria-label="modal.close">&times;</button>
+            <h3 id="project-modal-title" data-i18n="modal.title">Project titel</h3>
+            <p id="project-modal-description" data-i18n="modal.details">Project details</p>
+            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden data-i18n="modal.github">Bekijk op GitHub</a>
         </div>
     </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
             <span class="footer-name"><span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg</span>
-            <span class="footer-copy">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
+            <span class="footer-copy" data-i18n="footer.copyright">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
         </div>
     </footer>
 
+    <script src="scripts/i18n.js"></script>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const primaryNav = document.getElementById('primary-nav');
@@ -178,8 +188,10 @@
 
         document.querySelectorAll('.project-trigger').forEach((trigger) => {
             trigger.addEventListener('click', () => {
-                projectModalTitle.textContent = trigger.getAttribute('data-project-title') || 'Project';
-                projectModalDescription.textContent = trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
+                const originalTitle = trigger.getAttribute('data-project-title') || 'Project';
+                const project = window.portfolioI18n.getProject(originalTitle);
+                projectModalTitle.textContent = project ? project.title : originalTitle;
+                projectModalDescription.textContent = project ? project.details : trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
 
                 const projectUrl = trigger.getAttribute('data-project-url');
                 projectModalLink.href = projectUrl || '#';

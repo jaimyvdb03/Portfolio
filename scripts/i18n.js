@@ -1,0 +1,319 @@
+(() => {
+    const projects = [
+        {
+            title: 'Toegankelijke Leeromgeving Sollicitatieproces',
+            titleEn: 'Accessible Job Application Learning Platform',
+            description: 'Digitale leeromgeving die laaggeletterde volwassenen helpt zich voor te bereiden op solliciteren in Nederland.',
+            descriptionEn: 'A digital learning platform that helps adults with low literacy prepare for job applications in the Netherlands.',
+            detailsEn: `Project
+This project focused on creating an accessible digital learning platform for adults with low literacy who are preparing to apply for jobs in the Netherlands.
+
+The goal was to remove barriers such as limited language and digital skills, and uncertainty, so users could apply more independently and participate more fully in the job market.
+
+Based on research, we developed a website with simple A2-level lessons, multilingual support, text-to-speech, video lessons, and an AI assistant for safely practising job interviews.
+
+My role
+- Conducted UX research into low literacy and the challenges faced by the target audience
+- Researched human and democratic values and translated them into design decisions
+- Set up expert interviews and probes
+- Presented research findings and supported iterations with user research
+- Contributed to accessibility features such as multilingual support, text-to-speech, video lessons, and AI assistance
+
+Target audience
+Adults aged 25 to 45 with low literacy and limited knowledge of the Dutch job application process, including:
+- People who left school early
+- Newcomers and people with a migration background
+- People with limited language and digital skills.`,
+            detailsNl: `Project
+Dit project richtte zich op het ontwikkelen van een toegankelijke digitale leeromgeving voor laaggeletterde volwassenen die zich voorbereiden op solliciteren in Nederland.
+
+Het doel was om drempels zoals beperkte taalvaardigheid, digitale vaardigheden en onzekerheid weg te nemen, zodat gebruikers zelfstandiger kunnen solliciteren en beter kunnen deelnemen aan de arbeidsmarkt.
+
+Op basis van onderzoek is een website ontwikkeld met eenvoudige lessen op A2-niveau, ondersteuning in meerdere talen, text-to-speech, videolessen en een AI-assistent om sollicitatiegesprekken veilig te oefenen.
+
+Mijn rol
+- UX-onderzoek uitgevoerd naar laaggeletterdheid en uitdagingen van de doelgroep
+- Menselijke en democratische waarden onderzocht en vertaald naar ontwerpkeuzes
+- Expertinterviews en probes opgezet
+- Onderzoeksresultaten gepresenteerd en iteraties onderbouwd met gebruikersonderzoek
+- Meegedacht over toegankelijkheidsfuncties zoals meertaligheid, text-to-speech, videolessen en AI-assistentie
+
+Doelgroep
+Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederlandse sollicitatieproces, waaronder:
+- Mensen die vroegtijdig zijn gestopt met school
+- Nieuwkomers en mensen met een migratieachtergrond
+- Mensen met beperkte taal- en digitale vaardigheden.`
+        },
+        {
+            title: 'FitTrack Mobile',
+            titleEn: 'FitTrack Mobile',
+            description: 'React Native app om workouts en persoonlijke doelen te tracken.',
+            descriptionEn: 'A React Native app for tracking workouts and personal goals.',
+            detailsEn: 'A mobile app for logging workouts and daily goals, built with React Native. I worked on the user interface, form validation, and state management for user data.',
+            detailsNl: 'Een mobiele app om workouts en dagelijkse doelen te registreren. Ontwikkeld met React Native. Ik heb gewerkt aan de UI, formulier-validatie en state management voor gebruikersdata.'
+        },
+        {
+            title: 'Portfolio CMS',
+            titleEn: 'Portfolio CMS',
+            description: 'Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.',
+            descriptionEn: 'A Laravel CMS for managing projects, images, and descriptions.',
+            detailsEn: 'A simple content management system for portfolio items, built with Laravel. The project includes CRUD functionality, authentication, and an admin dashboard. I focused on backend logic and database integration.',
+            detailsNl: 'Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.'
+        },
+        {
+            title: 'TaskFlow API',
+            titleEn: 'TaskFlow API',
+            description: 'Ruby on Rails API voor taakbeheer en team-workflows.',
+            descriptionEn: 'A Ruby on Rails API for task management and team workflows.',
+            detailsEn: 'A Ruby on Rails API project for managing tasks within teams. It includes endpoints for users, tasks, and project statuses. I worked on model relationships, validations, and API documentation.',
+            detailsNl: 'Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.'
+        },
+        {
+            title: 'Event Landing Pages',
+            titleEn: 'Event Landing Pages',
+            description: "Snelle en responsive landingspagina's met interactieve elementen.",
+            descriptionEn: 'Fast, responsive landing pages with interactive elements.',
+            detailsEn: 'A collection of modern event pages built with HTML, CSS, and JavaScript. The focus was on performance, animation, and mobile-friendly layouts. I translated designs into interactive frontend code.',
+            detailsNl: 'Een set moderne event-pagina\'s gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.'
+        },
+        {
+            title: 'Mini Game Prototype',
+            titleEn: 'Mini Game Prototype',
+            description: 'CMGT prototype met basis gameplay, score en level-progressie.',
+            descriptionEn: 'A CMGT prototype featuring core gameplay, scoring, and level progression.',
+            detailsEn: 'A short game prototype for a CMGT assignment, built with JavaScript. I developed the gameplay logic, scoring system, and a simple level structure.',
+            detailsNl: 'Een korte game-prototype voor een schoolopdracht binnen CMGT. Gebouwd met JavaScript. In dit project heb ik gameplay-logica, score-systeem en eenvoudige level-opbouw ontwikkeld.'
+        }
+    ];
+
+    const translations = {
+        nl: {
+            pageTitle: {
+                home: 'Jaimy van den Berg - Portfolio',
+                projects: 'Projecten - Jaimy van den Berg'
+            },
+            nav: {
+                home: 'Home',
+                contact: 'Contact',
+                projects: 'Projecten',
+                about: 'Over mij'
+            },
+            menu: { open: 'Menu openen' },
+            theme: { toggle: 'Thema wijzigen' },
+            language: { aria: 'Taal kiezen' },
+            home: {
+                badge: 'Junior Developer · CMGT Student',
+                subtitle: 'Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.',
+                contact: 'Contact mij',
+                myProjects: 'Mijn projecten',
+                profileAlt: 'Profielfoto Jaimy van den Berg',
+                scroll: 'Scroll down'
+            },
+            about: {
+                title: 'Over mij',
+                intro: 'Mijn naam is Jaimy van den Berg. Ik ben 22 jaar oud en geboren op 4 december 2003. Ik ben student aan Hogeschool Rotterdam en volg de opleiding Creative Media and Game Technologies (CMGT).',
+                languages: 'Programmeertalen',
+                frameworks: 'Frameworks',
+                teamSkills: 'Vaardigheden in Teamverband',
+                teamIntro: 'Tijdens projecten in teamverband heb ik niet alleen technische kennis opgebouwd, maar ook belangrijke professionele vaardigheden ontwikkeld.',
+                skill1: 'Heldere communicatie over voortgang en taken',
+                skill2: 'Samenwerken met verschillende rollen binnen een team',
+                skill3: 'Feedback geven en ontvangen op een constructieve manier',
+                skill4: 'Plannen en deadlines bewaken met het team',
+                skill5: 'Problemen samen analyseren en oplossingsgericht werken'
+            },
+            projects: {
+                title: 'Projecten',
+                all: 'Bekijk alle projecten',
+                pageTitle: 'Mijn projecten',
+                pageIntro: 'Een overzicht van projecten waaraan ik heb gewerkt.'
+            },
+            contact: {
+                title: 'Contact',
+                intro: 'Stuur mij een bericht en ik neem zo snel mogelijk contact op.',
+                subject: 'Nieuw bericht via mijn portfolio',
+                emailLabel: 'Jouw e-mailadres',
+                emailPlaceholder: 'voorbeeld@email.com',
+                messageLabel: 'Bericht',
+                messagePlaceholder: 'Typ hier je bericht...',
+                submit: 'Versturen'
+            },
+            modal: {
+                close: 'Sluiten',
+                title: 'Project titel',
+                details: 'Project details',
+                github: 'Bekijk op GitHub'
+            },
+            footer: { copyright: '© 2026 — Alle rechten voorbehouden' },
+            detailsLabel: 'Details'
+        },
+        en: {
+            pageTitle: {
+                home: 'Jaimy van den Berg - Portfolio',
+                projects: 'Projects - Jaimy van den Berg'
+            },
+            nav: {
+                home: 'Home',
+                contact: 'Contact',
+                projects: 'Projects',
+                about: 'About me'
+            },
+            menu: { open: 'Open menu' },
+            theme: { toggle: 'Toggle theme' },
+            language: { aria: 'Select language' },
+            home: {
+                badge: 'Junior Developer · CMGT Student',
+                subtitle: 'I am an enthusiastic junior developer looking for an internship where I can continue to develop my skills.',
+                contact: 'Contact me',
+                myProjects: 'My projects',
+                profileAlt: 'Profile photo of Jaimy van den Berg',
+                scroll: 'Scroll down'
+            },
+            about: {
+                title: 'About me',
+                intro: 'My name is Jaimy van den Berg. I am 22 years old and was born on December 4, 2003. I study Creative Media and Game Technologies (CMGT) at Rotterdam University of Applied Sciences.',
+                languages: 'Programming languages',
+                frameworks: 'Frameworks',
+                teamSkills: 'Teamwork skills',
+                teamIntro: 'Through team projects, I have developed not only technical knowledge but also important professional skills.',
+                skill1: 'Communicating clearly about progress and tasks',
+                skill2: 'Collaborating with people in different team roles',
+                skill3: 'Giving and receiving feedback constructively',
+                skill4: 'Planning and keeping the team on schedule',
+                skill5: 'Analysing problems together and finding solutions'
+            },
+            projects: {
+                title: 'Projects',
+                all: 'View all projects',
+                pageTitle: 'My projects',
+                pageIntro: 'An overview of the projects I have worked on.'
+            },
+            contact: {
+                title: 'Contact',
+                intro: 'Send me a message and I will get back to you as soon as possible.',
+                subject: 'New message via my portfolio',
+                emailLabel: 'Your email address',
+                emailPlaceholder: 'you@example.com',
+                messageLabel: 'Message',
+                messagePlaceholder: 'Type your message here...',
+                submit: 'Send message'
+            },
+            modal: {
+                close: 'Close',
+                title: 'Project title',
+                details: 'Project details',
+                github: 'View on GitHub'
+            },
+            footer: { copyright: '© 2026 — All rights reserved' },
+            detailsLabel: 'Details'
+        }
+    };
+
+    const translationsFor = (language) => translations[language];
+    const getValue = (object, path) => path.split('.').reduce((value, key) => value && value[key], object);
+    let currentLanguage = localStorage.getItem('language') === 'en' ? 'en' : 'nl';
+
+    function applyLanguage(language) {
+        const dictionary = translationsFor(language);
+        currentLanguage = language;
+        document.documentElement.lang = language;
+        document.title = dictionary.pageTitle[document.body.dataset.page];
+
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+            const value = getValue(dictionary, element.dataset.i18n);
+            if (value) {
+                element.textContent = value;
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+            element.setAttribute('aria-label', getValue(dictionary, element.dataset.i18nAriaLabel));
+        });
+        document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
+            element.setAttribute('alt', getValue(dictionary, element.dataset.i18nAlt));
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+            element.setAttribute('placeholder', getValue(dictionary, element.dataset.i18nPlaceholder));
+        });
+        document.querySelectorAll('[data-i18n-value]').forEach((element) => {
+            element.value = getValue(dictionary, element.dataset.i18nValue);
+        });
+
+        document.querySelectorAll('.language-menu-item').forEach((menu) => {
+            menu.querySelector('.current-language-code').textContent = language.toUpperCase();
+            menu.querySelector('.language-toggle').setAttribute('aria-label', dictionary.language.aria);
+            menu.querySelectorAll('[data-language]').forEach((option) => {
+                option.setAttribute('aria-checked', option.dataset.language === language ? 'true' : 'false');
+            });
+        });
+
+        document.querySelectorAll('.project-trigger').forEach((button, index) => {
+            const project = projects[index];
+            if (!project) {
+                return;
+            }
+            const card = button.closest('.project-card');
+            card.querySelector('h3').textContent = language === 'en' ? project.titleEn : project.title;
+            card.querySelector('p').textContent = language === 'en' ? project.descriptionEn : project.description;
+            button.textContent = dictionary.detailsLabel;
+        });
+
+        localStorage.setItem('language', language);
+    }
+
+    document.querySelectorAll('.language-menu-item').forEach((menu) => {
+        const toggle = menu.querySelector('.language-toggle');
+        const options = menu.querySelector('.language-options');
+
+        function closeLanguageMenu(returnFocus = false) {
+            options.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+            if (returnFocus) {
+                toggle.focus();
+            }
+        }
+
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            options.hidden = isExpanded;
+            toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+            if (!isExpanded) {
+                options.querySelector('[aria-checked="true"]').focus();
+            }
+        });
+
+        menu.querySelectorAll('[data-language]').forEach((option) => {
+            option.addEventListener('click', () => {
+                applyLanguage(option.dataset.language);
+                closeLanguageMenu(true);
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target)) {
+                closeLanguageMenu();
+            }
+        });
+
+        menu.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeLanguageMenu(true);
+            }
+        });
+    });
+
+    window.portfolioI18n = {
+        getProject(title) {
+            const project = projects.find((item) => item.title === title);
+            if (!project) {
+                return null;
+            }
+            return {
+                title: currentLanguage === 'en' ? project.titleEn : project.title,
+                details: currentLanguage === 'en' ? project.detailsEn : project.detailsNl
+            };
+        }
+    };
+
+    applyLanguage(currentLanguage);
+})();
