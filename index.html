@@ -6,23 +6,32 @@
     <title>Jaimy van den Berg - Portfolio</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
+<body data-page="home">
     <header>
         <div class="site-title">
             <span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg
         </div>
-        <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <button class="menu-toggle" aria-label="Menu openen" data-i18n-aria-label="menu.open" aria-controls="primary-nav" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <nav id="primary-nav">
             <ul>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#projecten">Projecten</a></li>
-                <li><a href="#over-mij">Over mij</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#projecten" data-i18n="nav.projects">Projecten</a></li>
+                <li><a href="#over-mij" data-i18n="nav.about">Over mij</a></li>
+                <li class="language-menu-item">
+                    <button type="button" class="language-toggle" aria-label="Select language" data-i18n-aria-label="language.aria" aria-haspopup="true" aria-expanded="false" aria-controls="language-options">
+                        <span class="current-language-code" aria-hidden="true">NL</span>
+                    </button>
+                    <ul class="language-options" id="language-options" role="menu" hidden>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="nl" aria-checked="true"><span class="language-code" aria-hidden="true">NL</span> Nederlands</button></li>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="en" aria-checked="false"><span class="language-code" aria-hidden="true">EN</span> English</button></li>
+                    </ul>
+                </li>
                 <li>
-                    <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+                    <button class="theme-toggle" aria-label="Thema wijzigen" data-i18n-aria-label="theme.toggle" aria-pressed="false">
                         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -46,35 +55,35 @@
     <main>
         <section class="intro">
             <div class="intro-text">
-                <span class="intro-badge">Junior Developer &middot; CMGT Student</span>
+                <span class="intro-badge" data-i18n="home.badge">Junior Developer &middot; CMGT Student</span>
                 <h1>Jaimy<br>van den Berg</h1>
                 <br>
-                <p class="intro-subtitle">Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
+                <p class="intro-subtitle" data-i18n="home.subtitle">Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
                 <div class="intro-actions">
-                    <a href="#contact" class="contact-btn-intro">Contact mij</a>
-                    <a href="#projecten" class="contact-btn-intro projects-btn-intro">Mijn projecten</a>
+                    <a href="#contact" class="contact-btn-intro" data-i18n="home.contact">Contact mij</a>
+                    <a href="#projecten" class="contact-btn-intro projects-btn-intro" data-i18n="home.myProjects">Mijn projecten</a>
                 </div>
             </div>
             <div class="profile-pic">
-                <img src="images/Profiel_foto.png" alt="Profielfoto Jaimy van den Berg">
+                <img src="images/Profiel_foto.png" alt="Profielfoto Jaimy van den Berg" data-i18n-alt="home.profileAlt">
             </div>
         </section>
         <div class="scroll-down">
-            <span>Scroll down</span>
+            <span data-i18n="home.scroll">Scroll down</span>
             <span class="arrow">&#8595;</span>
         </div>
     </main>
 
     <section id="over-mij" class="about-section reveal-section" data-reveal="left">
-        <h2>Over mij</h2>
-        <p>
+        <h2 data-i18n="about.title">Over mij</h2>
+        <p data-i18n="about.intro">
             Mijn naam is Jaimy van den Berg. Ik ben 22 jaar oud en geboren op 4 december 2003.
             Ik ben student aan Hogeschool Rotterdam en volg de opleiding Creative Media and Game Technologies (CMGT).
         </p>
 
         <div class="about-lists">
             <div class="about-list-block">
-                <h3>Programmeertalen</h3>
+                <h3 data-i18n="about.languages">Programmeertalen</h3>
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -85,7 +94,7 @@
             </div>
 
             <div class="about-list-block">
-                <h3>Frameworks</h3>
+                <h3 data-i18n="about.frameworks">Frameworks</h3>
                 <ul>
                     <li>React</li>
                     <li>React Native</li>
@@ -95,22 +104,22 @@
             </div>
         </div>
 
-        <h3>Vaardigheden in Teamverband</h3>
-        <p>
+        <h3 data-i18n="about.teamSkills">Vaardigheden in Teamverband</h3>
+        <p data-i18n="about.teamIntro">
             Tijdens projecten in teamverband heb ik niet alleen technische kennis opgebouwd,
             maar ook belangrijke professionele vaardigheden ontwikkeld.
         </p>
         <ul>
-            <li>Heldere communicatie over voortgang en taken</li>
-            <li>Samenwerken met verschillende rollen binnen een team</li>
-            <li>Feedback geven en ontvangen op een constructieve manier</li>
-            <li>Plannen en deadlines bewaken met het team</li>
-            <li>Problemen samen analyseren en oplossingsgericht werken</li>
+            <li data-i18n="about.skill1">Heldere communicatie over voortgang en taken</li>
+            <li data-i18n="about.skill2">Samenwerken met verschillende rollen binnen een team</li>
+            <li data-i18n="about.skill3">Feedback geven en ontvangen op een constructieve manier</li>
+            <li data-i18n="about.skill4">Plannen en deadlines bewaken met het team</li>
+            <li data-i18n="about.skill5">Problemen samen analyseren en oplossingsgericht werken</li>
         </ul>
     </section>
 
     <section id="projecten" class="about-section projects-section reveal-section" data-reveal="right">
-        <h2>Projecten</h2>
+        <h2 data-i18n="projects.title">Projecten</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>Toegankelijke Leeromgeving Sollicitatieproces</h3>
@@ -128,41 +137,41 @@
                 <button type="button" class="project-details-btn project-trigger" data-project-title="Portfolio CMS" data-project-details="Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.">Details</button>
             </div>
         </div>
-        <a href="projecten.html" class="contact-btn-intro all-projects-btn">Bekijk alle projecten</a>
+        <a href="projecten.html" class="contact-btn-intro all-projects-btn" data-i18n="projects.all">Bekijk alle projecten</a>
     </section>
 
     <section id="contact" class="about-section contact-section reveal-section" data-reveal="left">
-        <h2>Contact</h2>
-        <p class="contact-intro">Stuur mij een bericht en ik neem zo snel mogelijk contact op.</p>
+        <h2 data-i18n="contact.title">Contact</h2>
+        <p class="contact-intro" data-i18n="contact.intro">Stuur mij een bericht en ik neem zo snel mogelijk contact op.</p>
         <form class="contact-form" action="https://formsubmit.co/jaimyvdb03@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nieuw bericht via mijn portfolio">
+            <input type="hidden" name="_subject" value="Nieuw bericht via mijn portfolio" data-i18n-value="contact.subject">
             <input type="hidden" name="_captcha" value="true">
             <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
-                <label for="email">Jouw e-mailadres</label>
-                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" maxlength="254" autocomplete="email" required>
+                <label for="email" data-i18n="contact.emailLabel">Jouw e-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" data-i18n-placeholder="contact.emailPlaceholder" maxlength="254" autocomplete="email" required>
             </div>
             <div class="form-group">
-                <label for="message">Bericht</label>
-                <textarea id="message" name="message" rows="6" placeholder="Typ hier je bericht..." maxlength="5000" required></textarea>
+                <label for="message" data-i18n="contact.messageLabel">Bericht</label>
+                <textarea id="message" name="message" rows="6" placeholder="Typ hier je bericht..." data-i18n-placeholder="contact.messagePlaceholder" maxlength="5000" required></textarea>
             </div>
-            <button type="submit" class="contact-btn">Versturen</button>
+            <button type="submit" class="contact-btn" data-i18n="contact.submit">Versturen</button>
         </form>
     </section>
 
     <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <div class="project-modal-content">
-            <button type="button" class="project-modal-close" aria-label="Sluiten">&times;</button>
-            <h3 id="project-modal-title">Project titel</h3>
-            <p id="project-modal-description">Project details</p>
-            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden>Bekijk op GitHub</a>
+            <button type="button" class="project-modal-close" aria-label="Sluiten" data-i18n-aria-label="modal.close">&times;</button>
+            <h3 id="project-modal-title" data-i18n="modal.title">Project titel</h3>
+            <p id="project-modal-description" data-i18n="modal.details">Project details</p>
+            <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener" hidden data-i18n="modal.github">Bekijk op GitHub</a>
         </div>
     </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
             <span class="footer-name"><span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg</span>
-            <span class="footer-copy">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
+            <span class="footer-copy" data-i18n="footer.copyright">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -178,6 +187,7 @@
         </div>
     </footer>
 
+    <script src="scripts/i18n.js"></script>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const primaryNav = document.getElementById('primary-nav');
@@ -305,8 +315,10 @@
 
             projectTriggers.forEach((trigger) => {
                 trigger.addEventListener('click', () => {
-                    const title = trigger.getAttribute('data-project-title') || 'Project';
-                    const details = trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
+                    const originalTitle = trigger.getAttribute('data-project-title') || 'Project';
+                    const project = window.portfolioI18n.getProject(originalTitle);
+                    const title = project ? project.title : originalTitle;
+                    const details = project ? project.details : trigger.getAttribute('data-project-details') || 'Geen extra informatie beschikbaar.';
                     const projectUrl = trigger.getAttribute('data-project-url');
 
                     projectModalTitle.textContent = title;

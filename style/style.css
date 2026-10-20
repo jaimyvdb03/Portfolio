@@ -212,6 +212,94 @@ nav ul li a:hover {
     background: var(--accent-soft);
 }
 
+.language-menu-item {
+    position: relative;
+}
+
+.language-toggle {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.language-toggle:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.current-language-code,
+.language-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.language-code {
+    width: 24px;
+    flex: 0 0 24px;
+}
+
+.current-language-code {
+    font-size: 0.8rem;
+}
+
+.language-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1300;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    min-width: 170px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
+}
+
+.language-options[hidden] {
+    display: none;
+}
+
+.language-options button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.language-options button:hover,
+.language-options button[aria-checked="true"] {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
 .theme-toggle {
     width: 42px;
     height: 42px;
@@ -1033,6 +1121,21 @@ body.page-ready .scroll-down {
         padding: 14px 16px;
         border-radius: 12px;
         font-size: 1.05rem;
+    }
+
+    nav ul li.language-menu-item {
+        padding: 8px 16px;
+    }
+
+    nav ul li .language-options {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+        box-shadow: none;
+    }
+
+    nav ul li .language-options li {
+        padding: 0;
     }
 
     nav ul li:last-child {
