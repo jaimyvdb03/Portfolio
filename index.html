@@ -50,7 +50,10 @@
                 <h1>Jaimy<br>van den Berg</h1>
                 <br>
                 <p class="intro-subtitle">Ik ben een enthousiaste junior developer en op zoek naar een stage waarin ik mijn skills verder kan ontwikkelen.</p>
-                <a href="#contact" class="contact-btn-intro">Contact mij</a>
+                <div class="intro-actions">
+                    <a href="#contact" class="contact-btn-intro">Contact mij</a>
+                    <a href="#projecten" class="contact-btn-intro projects-btn-intro">Mijn projecten</a>
+                </div>
             </div>
             <div class="profile-pic">
                 <img src="images/Profiel_foto.png" alt="Profielfoto Jaimy van den Berg">
@@ -124,28 +127,17 @@
                 <p>Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.</p>
                 <button type="button" class="project-details-btn project-trigger" data-project-title="Portfolio CMS" data-project-details="Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.">Details</button>
             </div>
-            <div class="project-card">
-                <h3>TaskFlow API</h3>
-                <p>Ruby on Rails API voor taakbeheer en team-workflows.</p>
-                <button type="button" class="project-details-btn project-trigger" data-project-title="TaskFlow API" data-project-details="Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.">Details</button>
-            </div>
-            <div class="project-card">
-                <h3>Event Landing Pages</h3>
-                <p>Snelle en responsive landingspagina's met interactieve elementen.</p>
-                <button type="button" class="project-details-btn project-trigger" data-project-title="Event Landing Pages" data-project-details="Een set moderne event-pagina's gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.">Details</button>
-            </div>
-            <div class="project-card">
-                <h3>Mini Game Prototype</h3>
-                <p>CMGT prototype met basis gameplay, score en level-progressie.</p>
-                <button type="button" class="project-details-btn project-trigger" data-project-title="Mini Game Prototype" data-project-details="Een korte game-prototype voor een schoolopdracht binnen CMGT. Gebouwd met JavaScript. In dit project heb ik gameplay-logica, score-systeem en eenvoudige level-opbouw ontwikkeld.">Details</button>
-            </div>
         </div>
+        <a href="projecten.html" class="contact-btn-intro all-projects-btn">Bekijk alle projecten</a>
     </section>
 
     <section id="contact" class="about-section contact-section reveal-section" data-reveal="left">
         <h2>Contact</h2>
         <p class="contact-intro">Stuur mij een bericht en ik neem zo snel mogelijk contact op.</p>
-        <form class="contact-form">
+        <form class="contact-form" action="https://formsubmit.co/jaimyvdb03@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nieuw bericht via mijn portfolio">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
             <div class="form-group">
                 <label for="email">Jouw e-mailadres</label>
                 <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" required>

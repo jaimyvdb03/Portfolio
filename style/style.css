@@ -173,6 +173,10 @@ header {
     color: var(--text);
 }
 
+.site-title-link {
+    text-decoration: none;
+}
+
 .neon-char {
     color: var(--accent);
     font-weight: 800;
@@ -355,6 +359,24 @@ main {
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.projects-btn-intro {
+    background: var(--surface);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: none;
+}
+
+.projects-btn-intro:hover {
+    color: var(--accent-contrast);
+    box-shadow: none;
+}
+
 .contact-btn-intro:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
@@ -469,7 +491,8 @@ body.page-ready .scroll-down {
     border-bottom: 1px solid var(--border);
 }
 
-.about-section h2 {
+.about-section h2,
+.projects-page-title {
     position: relative;
     margin-top: 0;
     margin-bottom: 28px;
@@ -480,7 +503,8 @@ body.page-ready .scroll-down {
     color: var(--text);
 }
 
-.about-section h2::after {
+.about-section h2::after,
+.projects-page-title::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -625,6 +649,11 @@ body.page-ready .scroll-down {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 28px;
     margin-top: 48px;
+}
+
+.all-projects-btn {
+    width: fit-content;
+    margin: 36px auto 0;
 }
 
 .project-card {
