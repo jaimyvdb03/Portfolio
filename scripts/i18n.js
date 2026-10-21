@@ -1,10 +1,12 @@
 (() => {
     const projects = [
         {
+            id: 'accessible-learning',
             title: 'Toegankelijke Leeromgeving Sollicitatieproces',
             titleEn: 'Accessible Job Application Learning Platform',
             description: 'Digitale leeromgeving die laaggeletterde volwassenen helpt zich voor te bereiden op solliciteren in Nederland.',
             descriptionEn: 'A digital learning platform that helps adults with low literacy prepare for job applications in the Netherlands.',
+            url: 'https://github.com/jaimyvdb03/Interdisciplinair_Team3_Eindproject',
             detailsEn: `Project
 This project focused on creating an accessible digital learning platform for adults with low literacy who are preparing to apply for jobs in the Netherlands.
 
@@ -13,6 +15,7 @@ The goal was to remove barriers such as limited language and digital skills, and
 Based on research, we developed a website with simple A2-level lessons, multilingual support, text-to-speech, video lessons, and an AI assistant for safely practising job interviews.
 
 My role
+- Served as project lead, facilitating Scrum and overseeing the project
 - Conducted UX research into low literacy and the challenges faced by the target audience
 - Researched human and democratic values and translated them into design decisions
 - Set up expert interviews and probes
@@ -32,6 +35,7 @@ Het doel was om drempels zoals beperkte taalvaardigheid, digitale vaardigheden e
 Op basis van onderzoek is een website ontwikkeld met eenvoudige lessen op A2-niveau, ondersteuning in meerdere talen, text-to-speech, videolessen en een AI-assistent om sollicitatiegesprekken veilig te oefenen.
 
 Mijn rol
+- Als projectleider de Scrum geleid en het project als geheel overzien
 - UX-onderzoek uitgevoerd naar laaggeletterdheid en uitdagingen van de doelgroep
 - Menselijke en democratische waarden onderzocht en vertaald naar ontwerpkeuzes
 - Expertinterviews en probes opgezet
@@ -45,14 +49,31 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
 - Mensen met beperkte taal- en digitale vaardigheden.`
         },
         {
-            title: 'FitTrack Mobile',
-            titleEn: 'FitTrack Mobile',
-            description: 'React Native app om workouts en persoonlijke doelen te tracken.',
-            descriptionEn: 'A React Native app for tracking workouts and personal goals.',
-            detailsEn: 'A mobile app for logging workouts and daily goals, built with React Native. I worked on the user interface, form validation, and state management for user data.',
-            detailsNl: 'Een mobiele app om workouts en dagelijkse doelen te registreren. Ontwikkeld met React Native. Ik heb gewerkt aan de UI, formulier-validatie en state management voor gebruikersdata.'
+            id: 'open-hiring',
+            title: 'Open Hiring',
+            titleEn: 'Open Hiring',
+            description: 'Een eerlijkere arbeidsmarkt door werkgevers centraal te stellen in een toegankelijk sollicitatieproces.',
+            descriptionEn: 'A fairer job market by focusing on employers in an accessible hiring process.',
+            images: Array.from({ length: 8 }, (_, index) => `images/Projecten/OpenHiring/OpenHiring${index + 1}.webp`),
+            detailsEn: `Project
+For this school project, we explored how to further develop Open Hiring, a concept for a fairer and more accessible job market. With Open Hiring, people can apply without personal details such as their name, background, or CV affecting their chances in advance. The focus is on motivation and willingness to get started.
+
+Our approach
+We chose to focus on employers rather than superficially addressing both employers and job seekers. This allowed us to explore employers' needs, questions, and concerns, and consider how they could apply Open Hiring within their organisations.
+
+What I learned
+I learned how important it is to make clear choices at the start of a design process. By focusing on one target audience and defining the scope, we were able to add depth and develop a stronger, more purposeful result.`,
+            detailsNl: `Project
+Voor dit schoolproject onderzochten we hoe we Open Hiring verder konden uitwerken: een concept voor een eerlijkere en toegankelijkere arbeidsmarkt. Bij Open Hiring kunnen mensen solliciteren zonder dat persoonlijke gegevens, zoals hun naam, achtergrond of cv, vooraf invloed hebben op hun kansen. De nadruk ligt op motivatie en de bereidheid om aan de slag te gaan.
+
+Onze aanpak
+We kozen ervoor om werkgevers centraal te stellen, in plaats van zowel werkgevers als werkzoekenden oppervlakkig te bedienen. Zo konden we ons verdiepen in de behoeften, vragen en twijfels van werkgevers, en onderzoeken hoe zij Open Hiring binnen hun organisatie kunnen toepassen.
+
+Wat ik heb geleerd
+Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duidelijke keuzes te maken. Door één doelgroep centraal te stellen en de scope af te bakenen, konden we meer diepgang aanbrengen en een sterker, doelgerichter resultaat ontwikkelen.`
         },
         {
+            id: 'portfolio-cms',
             title: 'Portfolio CMS',
             titleEn: 'Portfolio CMS',
             description: 'Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.',
@@ -61,6 +82,7 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
             detailsNl: 'Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.'
         },
         {
+            id: 'taskflow-api',
             title: 'TaskFlow API',
             titleEn: 'TaskFlow API',
             description: 'Ruby on Rails API voor taakbeheer en team-workflows.',
@@ -69,6 +91,7 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
             detailsNl: 'Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.'
         },
         {
+            id: 'event-landing-pages',
             title: 'Event Landing Pages',
             titleEn: 'Event Landing Pages',
             description: "Snelle en responsive landingspagina's met interactieve elementen.",
@@ -77,6 +100,7 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
             detailsNl: 'Een set moderne event-pagina\'s gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.'
         },
         {
+            id: 'mini-game-prototype',
             title: 'Mini Game Prototype',
             titleEn: 'Mini Game Prototype',
             description: 'CMGT prototype met basis gameplay, score en level-progressie.',
@@ -90,7 +114,8 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
         nl: {
             pageTitle: {
                 home: 'Jaimy van den Berg - Portfolio',
-                projects: 'Projecten - Jaimy van den Berg'
+                projects: 'Projecten - Jaimy van den Berg',
+                'project-detail': 'Project - Jaimy van den Berg'
             },
             nav: {
                 home: 'Home',
@@ -126,7 +151,13 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
                 title: 'Projecten',
                 all: 'Bekijk alle projecten',
                 pageTitle: 'Mijn projecten',
-                pageIntro: 'Een overzicht van projecten waaraan ik heb gewerkt.'
+                pageIntro: 'Een overzicht van projecten waaraan ik heb gewerkt.',
+                openHiringImageAlt: 'Open Hiring projectafbeelding',
+                backToList: 'Terug naar projecten',
+                imageGallery: 'Projectafbeeldingen',
+                imageViewer: 'Vergrote projectafbeelding',
+                enlargeImage: 'groter bekijken',
+                notFound: 'Dit project kon niet worden gevonden.'
             },
             contact: {
                 title: 'Contact',
@@ -150,7 +181,8 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
         en: {
             pageTitle: {
                 home: 'Jaimy van den Berg - Portfolio',
-                projects: 'Projects - Jaimy van den Berg'
+                projects: 'Projects - Jaimy van den Berg',
+                'project-detail': 'Project - Jaimy van den Berg'
             },
             nav: {
                 home: 'Home',
@@ -186,7 +218,13 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
                 title: 'Projects',
                 all: 'View all projects',
                 pageTitle: 'My projects',
-                pageIntro: 'An overview of the projects I have worked on.'
+                pageIntro: 'An overview of the projects I have worked on.',
+                openHiringImageAlt: 'Open Hiring project image',
+                backToList: 'Back to projects',
+                imageGallery: 'Project images',
+                imageViewer: 'Enlarged project image',
+                enlargeImage: 'view larger',
+                notFound: 'This project could not be found.'
             },
             contact: {
                 title: 'Contact',
@@ -259,6 +297,7 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
         });
 
         localStorage.setItem('language', language);
+        window.dispatchEvent(new Event('portfolio:languagechange'));
     }
 
     document.querySelectorAll('.language-menu-item').forEach((menu) => {
@@ -303,14 +342,20 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
     });
 
     window.portfolioI18n = {
-        getProject(title) {
-            const project = projects.find((item) => item.title === title);
+        getProject(id) {
+            const project = projects.find((item) => item.id === id);
             if (!project) {
                 return null;
             }
             return {
+                id: project.id,
                 title: currentLanguage === 'en' ? project.titleEn : project.title,
-                details: currentLanguage === 'en' ? project.detailsEn : project.detailsNl
+                description: currentLanguage === 'en' ? project.descriptionEn : project.description,
+                details: currentLanguage === 'en' ? project.detailsEn : project.detailsNl,
+                images: project.images || [],
+                imageAltPrefix: currentLanguage === 'en' ? 'Open Hiring project image' : 'Open Hiring projectafbeelding',
+                enlargeImageLabel: translations[currentLanguage].projects.enlargeImage,
+                url: project.url || null
             };
         }
     };
