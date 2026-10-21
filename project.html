@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Jaimy van den Berg</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body data-page="project-detail">
+    <header>
+        <a class="site-title site-title-link" href="index.html">
+            <span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg
+        </a>
+        <button class="menu-toggle" aria-label="Menu openen" data-i18n-aria-label="menu.open" aria-controls="primary-nav" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="projecten.html" data-i18n="nav.projects">Projecten</a></li>
+                <li><a href="index.html#over-mij" data-i18n="nav.about">Over mij</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="language-menu-item">
+                    <button type="button" class="language-toggle" aria-label="Select language" data-i18n-aria-label="language.aria" aria-haspopup="true" aria-expanded="false" aria-controls="language-options">
+                        <span class="current-language-code" aria-hidden="true">NL</span>
+                    </button>
+                    <ul class="language-options" id="language-options" role="menu" hidden>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="nl" aria-checked="true"><span class="language-code" aria-hidden="true">NL</span> Nederlands</button></li>
+                        <li role="none"><button type="button" role="menuitemradio" data-language="en" aria-checked="false"><span class="language-code" aria-hidden="true">EN</span> English</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="theme-toggle" aria-label="Thema wijzigen" data-i18n-aria-label="theme.toggle" aria-pressed="false">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+
+    <main>
+        <section class="about-section project-detail-section" id="project-detail">
+            <a class="project-back-link" href="projecten.html" data-i18n="projects.backToList">Terug naar projecten</a>
+            <h1 id="project-title"></h1>
+            <p class="project-detail-summary" id="project-summary"></p>
+            <div class="project-detail-description" id="project-description"></div>
+            <div class="project-detail-gallery" id="project-gallery" aria-label="Projectafbeeldingen" data-i18n-aria-label="projects.imageGallery"></div>
+            <a class="project-detail-external-link" id="project-external-link" target="_blank" rel="noopener" hidden data-i18n="modal.github">Bekijk op GitHub</a>
+        </section>
+        <p class="about-section project-not-found" id="project-not-found" role="status" hidden data-i18n="projects.notFound">Dit project kon niet worden gevonden.</p>
+    </main>
+
+    <dialog class="image-viewer" id="image-viewer" aria-label="Vergrote projectafbeelding" data-i18n-aria-label="projects.imageViewer">
+        <button type="button" class="image-viewer-close" aria-label="Sluiten" data-i18n-aria-label="modal.close">&times;</button>
+        <img id="image-viewer-image" alt="">
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-name"><span class="neon-char">J</span>aimy van den <span class="neon-char">B</span>erg</span>
+            <span class="footer-copy" data-i18n="footer.copyright">&copy; 2026 &mdash; Alle rechten voorbehouden</span>
+        </div>
+    </footer>
+
+    <script src="scripts/i18n.js"></script>
+    <script>
+        const projectId = new URLSearchParams(window.location.search).get('project');
+        const projectDetail = document.getElementById('project-detail');
+        const projectNotFound = document.getElementById('project-not-found');
+        const projectTitle = document.getElementById('project-title');
+        const projectSummary = document.getElementById('project-summary');
+        const projectDescription = document.getElementById('project-description');
+        const projectGallery = document.getElementById('project-gallery');
+        const projectExternalLink = document.getElementById('project-external-link');
+        const imageViewer = document.getElementById('image-viewer');
+        const imageViewerImage = document.getElementById('image-viewer-image');
+        const imageViewerClose = document.querySelector('.image-viewer-close');
+
+        // Een blok met een korte eerste regel zonder leesteken is een onderwerpkop.
+        function renderDetails(text) {
+            const nodes = [];
+            text.split(/\n\s*\n/).forEach((block) => {
+                const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+                if (lines.length > 1 && lines[0].length <= 40 && !/[.:!?]$/.test(lines[0])) {
+                    const heading = document.createElement('h3');
+                    heading.className = 'project-topic';
+                    heading.textContent = lines.shift();
+                    nodes.push(heading);
+                }
+
+                let list = null;
+                lines.forEach((line) => {
+                    if (line.startsWith('- ')) {
+                        if (!list) {
+                            list = document.createElement('ul');
+                            nodes.push(list);
+                        }
+                        const item = document.createElement('li');
+                        item.textContent = line.slice(2);
+                        list.append(item);
+                    } else {
+                        list = null;
+                        const paragraph = document.createElement('p');
+                        paragraph.textContent = line;
+                        nodes.push(paragraph);
+                    }
+                });
+            });
+            return nodes;
+        }
+
+        function renderProject() {
+            const project = window.portfolioI18n.getProject(projectId);
+            projectDetail.hidden = !project;
+            projectNotFound.hidden = Boolean(project);
+
+            if (!project) {
+                return;
+            }
+
+            projectTitle.textContent = project.title;
+            projectSummary.textContent = project.description;
+            projectDescription.replaceChildren(...renderDetails(project.details));
+            projectGallery.replaceChildren(...project.images.map((src, index) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'project-image-button';
+                const imageAlt = `${project.imageAltPrefix} ${index + 1}`;
+                button.setAttribute('aria-label', `${imageAlt} - ${project.enlargeImageLabel}`);
+
+                const image = document.createElement('img');
+                image.src = src;
+                image.alt = imageAlt;
+                image.loading = 'lazy';
+                image.decoding = 'async';
+                button.append(image);
+                button.addEventListener('click', () => {
+                    imageViewerImage.src = src;
+                    imageViewerImage.alt = imageAlt;
+                    imageViewer.showModal();
+                });
+                return button;
+            }));
+            projectGallery.hidden = project.images.length === 0;
+            projectExternalLink.href = project.url || '#';
+            projectExternalLink.hidden = !project.url;
+            document.title = `${project.title} - Jaimy van den Berg`;
+        }
+
+        renderProject();
+        window.addEventListener('portfolio:languagechange', renderProject);
+        imageViewerClose.addEventListener('click', () => imageViewer.close());
+        imageViewer.addEventListener('click', (event) => {
+            if (event.target === imageViewer) {
+                imageViewer.close();
+            }
+        });
+        imageViewer.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                imageViewer.close();
+            }
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNav = document.getElementById('primary-nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+        const themeToggle = document.querySelector('.theme-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+
+        function closeMenu() {
+            document.body.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = document.body.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        menuBackdrop.addEventListener('click', closeMenu);
+        primaryNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        function applyTheme(isDarkMode) {
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            sunIcon.style.display = isDarkMode ? 'block' : 'none';
+            moonIcon.style.display = isDarkMode ? 'none' : 'block';
+            themeToggle.setAttribute('aria-pressed', isDarkMode ? 'true' : 'false');
+        }
+
+        applyTheme(localStorage.getItem('theme') === 'dark');
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            applyTheme(isDarkMode);
+        });
+    </script>
+</body>
+</html>
