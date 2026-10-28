@@ -179,6 +179,7 @@
             }));
             projectGallery.hidden = project.images.length === 0;
             projectExternalLink.href = project.url || '#';
+            projectExternalLink.textContent = project.externalLinkLabel;
             projectExternalLink.hidden = !project.url;
             document.title = `${project.title} - Jaimy van den Berg`;
         }
