@@ -6,6 +6,15 @@
             titleEn: 'Accessible Job Application Learning Platform',
             description: 'Digitale leeromgeving die laaggeletterde volwassenen helpt zich voor te bereiden op solliciteren in Nederland.',
             descriptionEn: 'A digital learning platform that helps adults with low literacy prepare for job applications in the Netherlands.',
+            images: [
+                'images/Projecten/Interdiciplinair/Homescreen.PNG',
+                'images/Projecten/Interdiciplinair/Talen.PNG',
+                'images/Projecten/Interdiciplinair/LesSelecteren.PNG',
+                'images/Projecten/Interdiciplinair/Uitleg.PNG',
+                'images/Projecten/Interdiciplinair/Oefenen.PNG',
+                'images/Projecten/Interdiciplinair/Solicitatie gesprak.PNG',
+                'images/Projecten/Interdiciplinair/resultaat.PNG'
+            ],
             url: 'https://github.com/jaimyvdb03/Interdisciplinair_Team3_Eindproject',
             detailsEn: `Project
 This project focused on creating an accessible digital learning platform for adults with low literacy who are preparing to apply for jobs in the Netherlands.
@@ -121,31 +130,30 @@ Ook heb ik geleerd om mijn artistieke keuzes af te stemmen op de gameplay en de 
 Dit project heeft mij geholpen om mijn vaardigheden als artist verder te ontwikkelen en meer inzicht te krijgen in het vertalen van creatieve ideeën naar visuele elementen die daadwerkelijk in een game worden gebruikt.`
         },
         {
-            id: 'taskflow-api',
-            title: 'TaskFlow API',
-            titleEn: 'TaskFlow API',
-            description: 'Ruby on Rails API voor taakbeheer en team-workflows.',
-            descriptionEn: 'A Ruby on Rails API for task management and team workflows.',
-            detailsEn: 'A Ruby on Rails API project for managing tasks within teams. It includes endpoints for users, tasks, and project statuses. I worked on model relationships, validations, and API documentation.',
-            detailsNl: 'Een API-project in Ruby on Rails voor taakbeheer binnen teams. Inclusief endpoints voor users, tasks en projectstatussen. Ik heb gewerkt aan model-relaties, validaties en API-documentatie.'
-        },
-        {
-            id: 'event-landing-pages',
-            title: 'Event Landing Pages',
-            titleEn: 'Event Landing Pages',
-            description: "Snelle en responsive landingspagina's met interactieve elementen.",
-            descriptionEn: 'Fast, responsive landing pages with interactive elements.',
-            detailsEn: 'A collection of modern event pages built with HTML, CSS, and JavaScript. The focus was on performance, animation, and mobile-friendly layouts. I translated designs into interactive frontend code.',
-            detailsNl: 'Een set moderne event-pagina\'s gebouwd met HTML, CSS en JavaScript. Focus op performance, animaties en mobielvriendelijke layouts. Ik heb hierbij design vertaald naar interactieve frontend code.'
-        },
-        {
-            id: 'mini-game-prototype',
-            title: 'Mini Game Prototype',
-            titleEn: 'Mini Game Prototype',
-            description: 'CMGT prototype met basis gameplay, score en level-progressie.',
-            descriptionEn: 'A CMGT prototype featuring core gameplay, scoring, and level progression.',
-            detailsEn: 'A short game prototype for a CMGT assignment, built with JavaScript. I developed the gameplay logic, scoring system, and a simple level structure.',
-            detailsNl: 'Een korte game-prototype voor een schoolopdracht binnen CMGT. Gebouwd met JavaScript. In dit project heb ik gameplay-logica, score-systeem en eenvoudige level-opbouw ontwikkeld.'
+            id: 'de-hoog-glas-bewassing',
+            title: 'De Hoog Glas Bewassing',
+            titleEn: 'De Hoog Glas Bewassing',
+            description: 'Onderhoud van de website van De Hoog Glas Bewassing.',
+            descriptionEn: 'Maintaining the De Hoog Glas Bewassing website.',
+            images: [
+                'images/Projecten/DeHoog/home.PNG',
+                'images/Projecten/DeHoog/foto2.PNG',
+                'images/Projecten/DeHoog/foto3.PNG',
+                'images/Projecten/DeHoog/logo-m.png'
+            ],
+            url: 'https://www.dehoogglasbewassing.nl/',
+            externalLinkLabel: 'Bekijk de website',
+            externalLinkLabelEn: 'Visit the website',
+            detailsEn: `Project
+I maintain the website for De Hoog Glas Bewassing.
+
+My role
+My task is to keep the website maintained.`,
+            detailsNl: `Project
+Voor De Hoog Glas Bewassing onderhoud ik de website.
+
+Mijn rol
+Mijn taak is het onderhouden van de website.`
         }
     ];
 
@@ -191,6 +199,8 @@ Dit project heeft mij geholpen om mijn vaardigheden als artist verder te ontwikk
                 all: 'Bekijk alle projecten',
                 pageTitle: 'Mijn projecten',
                 pageIntro: 'Een overzicht van projecten waaraan ik heb gewerkt.',
+                accessibleLearningImageAlt: 'Startscherm van de toegankelijke leeromgeving',
+                deHoogLogoAlt: 'Logo van De Hoog Glas Bewassing',
                 openHiringImageAlt: 'Open Hiring projectafbeelding',
                 mjsLogoAlt: 'Logo van My Shady Jewels',
                 backToList: 'Terug naar projecten',
@@ -259,6 +269,8 @@ Dit project heeft mij geholpen om mijn vaardigheden als artist verder te ontwikk
                 all: 'View all projects',
                 pageTitle: 'My projects',
                 pageIntro: 'An overview of the projects I have worked on.',
+                accessibleLearningImageAlt: 'Home screen of the accessible learning platform',
+                deHoogLogoAlt: 'De Hoog Glas Bewassing logo',
                 openHiringImageAlt: 'Open Hiring project image',
                 mjsLogoAlt: 'My Shady Jewels logo',
                 backToList: 'Back to projects',
@@ -397,6 +409,9 @@ Dit project heeft mij geholpen om mijn vaardigheden als artist verder te ontwikk
                 trailer: project.trailer || null,
                 imageAltPrefix: currentLanguage === 'en' ? `${project.titleEn} project image` : `${project.title} projectafbeelding`,
                 enlargeImageLabel: translations[currentLanguage].projects.enlargeImage,
+                externalLinkLabel: currentLanguage === 'en'
+                    ? project.externalLinkLabelEn || translations[currentLanguage].modal.github
+                    : project.externalLinkLabel || translations[currentLanguage].modal.github,
                 url: project.url || null
             };
         }
