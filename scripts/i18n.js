@@ -73,13 +73,49 @@ Wat ik heb geleerd
 Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duidelijke keuzes te maken. Door één doelgroep centraal te stellen en de scope af te bakenen, konden we meer diepgang aanbrengen en een sterker, doelgerichter resultaat ontwikkelen.`
         },
         {
-            id: 'portfolio-cms',
-            title: 'Portfolio CMS',
-            titleEn: 'Portfolio CMS',
-            description: 'Laravel CMS voor het beheren van projecten, afbeeldingen en beschrijvingen.',
-            descriptionEn: 'A Laravel CMS for managing projects, images, and descriptions.',
-            detailsEn: 'A simple content management system for portfolio items, built with Laravel. The project includes CRUD functionality, authentication, and an admin dashboard. I focused on backend logic and database integration.',
-            detailsNl: 'Een eenvoudig content management systeem voor portfolio-items, gebouwd met Laravel. Dit project bevat CRUD-functionaliteit, authenticatie en een admin-dashboard. Mijn focus lag op backend-logica en het koppelen van de database.'
+            id: 'my-shady-jewels',
+            title: 'My Shady Jewels',
+            titleEn: 'My Shady Jewels',
+            description: 'Mobile Game Development | Unity | Game Art & Animation',
+            descriptionEn: 'Mobile Game Development | Unity | Game Art & Animation',
+            images: [
+                'images/Projecten/MJS/Homescreen.PNG',
+                'images/Projecten/MJS/Level.PNG',
+                'images/Projecten/MJS/LevelSelect.PNG',
+                'images/Projecten/MJS/MainCaracter.png',
+                'images/Projecten/MJS/Pauze menu.PNG'
+            ],
+            trailer: 'images/Projecten/MJS/Trailer.mp4',
+            detailsEn: `About the project
+My Shady Jewels is a mobile game that I developed with my project team as part of my minor. The game is about robbing a museum. The goal was to become familiar with Unity and learn how to create a video game.
+
+My role
+I was responsible for the artistic side of the game. My work consisted of three main areas:
+- UI Design: Designing the user interface so the menus and other visual elements fit the game's style and are easy to use.
+- Character Design: Designing characters that fit the theme and look of My Shady Jewels.
+- Animation: Bringing the characters and visual elements to life through animation, giving the game more dynamism and character.
+
+What I learned
+During this project, I learned how important it is to align UI, character design, and animation so that all elements form one consistent visual style. I also gained experience creating game art for a mobile game and integrating my designs into Unity.
+
+I also learned to align my artistic choices with the gameplay and the technical possibilities of the game. Working with my team gave me more insight into the game development process and how different disciplines come together to create a complete game.
+
+This project helped me further develop my skills as an artist and better understand how to turn creative ideas into visual elements that are actually used in a game.`,
+            detailsNl: `Over het project
+My Shady Jewels is een mobiele game die ik samen met mijn projectteam heb ontwikkeld voor mijn minor. In de game staat het beroven van een museum centraal. Het doel was om bekend te raken met Unity en het creëren van een videogame.
+
+Mijn rol
+Binnen dit project was ik verantwoordelijk voor de artistieke kant van de game. Mijn werkzaamheden bestonden uit drie belangrijke onderdelen:
+- UI Design: Het ontwerpen van de gebruikersinterface, zodat de menu's en andere visuele elementen aansluiten bij de stijl van de game en prettig zijn om te gebruiken.
+- Character Design: Het ontwerpen van personages die passen bij het thema en de uitstraling van My Shady Jewels.
+- Animatie: Het tot leven brengen van de personages en visuele elementen door middel van animaties, waardoor de game meer dynamiek en karakter kreeg.
+
+Wat ik heb geleerd
+Tijdens dit project heb ik geleerd hoe belangrijk het is om UI, character design en animatie op elkaar af te stemmen, zodat alle onderdelen samen één consistente visuele stijl vormen. Daarnaast heb ik ervaring opgedaan met het ontwikkelen van game art voor een mobiele game en het verwerken van mijn ontwerpen binnen Unity.
+
+Ook heb ik geleerd om mijn artistieke keuzes af te stemmen op de gameplay en de technische mogelijkheden van de game. Door samen te werken met mijn team heb ik bovendien meer inzicht gekregen in het game development-proces en hoe verschillende disciplines samenkomen om een compleet spel te creëren.
+
+Dit project heeft mij geholpen om mijn vaardigheden als artist verder te ontwikkelen en meer inzicht te krijgen in het vertalen van creatieve ideeën naar visuele elementen die daadwerkelijk in een game worden gebruikt.`
         },
         {
             id: 'taskflow-api',
@@ -153,6 +189,7 @@ Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duid
                 pageTitle: 'Mijn projecten',
                 pageIntro: 'Een overzicht van projecten waaraan ik heb gewerkt.',
                 openHiringImageAlt: 'Open Hiring projectafbeelding',
+                mjsLogoAlt: 'Logo van My Shady Jewels',
                 backToList: 'Terug naar projecten',
                 imageGallery: 'Projectafbeeldingen',
                 imageViewer: 'Vergrote projectafbeelding',
@@ -220,6 +257,7 @@ Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duid
                 pageTitle: 'My projects',
                 pageIntro: 'An overview of the projects I have worked on.',
                 openHiringImageAlt: 'Open Hiring project image',
+                mjsLogoAlt: 'My Shady Jewels logo',
                 backToList: 'Back to projects',
                 imageGallery: 'Project images',
                 imageViewer: 'Enlarged project image',
@@ -353,7 +391,8 @@ Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duid
                 description: currentLanguage === 'en' ? project.descriptionEn : project.description,
                 details: currentLanguage === 'en' ? project.detailsEn : project.detailsNl,
                 images: project.images || [],
-                imageAltPrefix: currentLanguage === 'en' ? 'Open Hiring project image' : 'Open Hiring projectafbeelding',
+                trailer: project.trailer || null,
+                imageAltPrefix: currentLanguage === 'en' ? `${project.titleEn} project image` : `${project.title} projectafbeelding`,
                 enlargeImageLabel: translations[currentLanguage].projects.enlargeImage,
                 url: project.url || null
             };

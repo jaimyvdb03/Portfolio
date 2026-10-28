@@ -57,9 +57,14 @@
     <main>
         <section class="about-section project-detail-section" id="project-detail">
             <a class="project-back-link" href="projecten.html" data-i18n="projects.backToList">Terug naar projecten</a>
-            <h1 id="project-title"></h1>
-            <p class="project-detail-summary" id="project-summary"></p>
-            <div class="project-detail-description" id="project-description"></div>
+            <div class="project-detail-layout" id="project-detail-layout">
+                <div class="project-detail-content">
+                    <h1 id="project-title"></h1>
+                    <p class="project-detail-summary" id="project-summary"></p>
+                    <div class="project-detail-description" id="project-description"></div>
+                </div>
+                <aside class="project-detail-trailer" id="project-trailer" hidden></aside>
+            </div>
             <div class="project-detail-gallery" id="project-gallery" aria-label="Projectafbeeldingen" data-i18n-aria-label="projects.imageGallery"></div>
             <a class="project-detail-external-link" id="project-external-link" target="_blank" rel="noopener" hidden data-i18n="modal.github">Bekijk op GitHub</a>
         </section>
@@ -86,6 +91,8 @@
         const projectTitle = document.getElementById('project-title');
         const projectSummary = document.getElementById('project-summary');
         const projectDescription = document.getElementById('project-description');
+        const projectDetailLayout = document.getElementById('project-detail-layout');
+        const projectTrailer = document.getElementById('project-trailer');
         const projectGallery = document.getElementById('project-gallery');
         const projectExternalLink = document.getElementById('project-external-link');
         const imageViewer = document.getElementById('image-viewer');
@@ -137,6 +144,19 @@
             projectTitle.textContent = project.title;
             projectSummary.textContent = project.description;
             projectDescription.replaceChildren(...renderDetails(project.details));
+            projectTrailer.replaceChildren();
+            projectTrailer.hidden = !project.trailer;
+            projectDetailLayout.classList.toggle('has-trailer', Boolean(project.trailer));
+            if (project.trailer) {
+                const trailer = document.createElement('video');
+                trailer.src = project.trailer;
+                trailer.controls = true;
+                trailer.preload = 'metadata';
+                trailer.playsInline = true;
+                trailer.setAttribute('aria-label', `${project.title} trailer`);
+                projectTrailer.append(trailer);
+            }
+
             projectGallery.replaceChildren(...project.images.map((src, index) => {
                 const button = document.createElement('button');
                 button.type = 'button';
