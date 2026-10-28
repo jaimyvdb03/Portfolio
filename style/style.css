@@ -886,11 +886,10 @@ body.page-ready .scroll-down {
     display: none;
 }
 
-.project-detail-trailer video {
+.project-detail-trailer iframe {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: contain;
     background: var(--accent-soft);
     border: 1px solid var(--border);
     border-radius: 16px;

@@ -55,6 +55,8 @@ Laaggeletterde volwassenen van 25 tot 45 jaar met beperkte kennis van het Nederl
             description: 'Een eerlijkere arbeidsmarkt door werkgevers centraal te stellen in een toegankelijk sollicitatieproces.',
             descriptionEn: 'A fairer job market by focusing on employers in an accessible hiring process.',
             images: Array.from({ length: 8 }, (_, index) => `images/Projecten/OpenHiring/OpenHiring${index + 1}.webp`),
+            url: 'https://github.com/Mathijs-04/TLE1-Agency',
+            trailer: 'https://www.youtube.com/embed/dkx_U43mu_8',
             detailsEn: `Project
 For this school project, we explored how to further develop Open Hiring, a concept for a fairer and more accessible job market. With Open Hiring, people can apply without personal details such as their name, background, or CV affecting their chances in advance. The focus is on motivation and willingness to get started.
 
@@ -85,7 +87,8 @@ Ik heb geleerd hoe belangrijk het is om aan het begin van een ontwerpproces duid
                 'images/Projecten/MJS/MainCaracter.png',
                 'images/Projecten/MJS/Pauze menu.PNG'
             ],
-            trailer: 'images/Projecten/MJS/Trailer.mp4',
+            url: 'https://github.com/LoudMouth-Studios/MSJ',
+            trailer: 'https://www.youtube.com/embed/fqKDwZ6Dn0s',
             detailsEn: `About the project
 My Shady Jewels is a mobile game that I developed with my project team as part of my minor. The game is about robbing a museum. The goal was to become familiar with Unity and learn how to create a video game.
 
